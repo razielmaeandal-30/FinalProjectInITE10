@@ -1,0 +1,382 @@
+/* ===================================================
+   VARIABLES & GLOBAL STYLES
+   =================================================== */
+:root {
+    --bg: #14478a;
+    --text: #eaeaea;
+    --card: #1a1a1a;
+    --input-bg: #222;
+    --border: #333;
+    --accent: #5aa9e6;
+    --accent2: #7fc8f8;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --radius: 18px;
+    --transition: 0.35s ease-in-out;
+}
+
+/* LIGHT MODE */
+body.light {
+    --bg: #f4f4f9;
+    --text: #1a1a1a;
+    --card: #ffffff;
+    --input-bg: #ffffff;
+    --border: #cfcfcf;
+    --accent: #086083;
+    --accent2: #239ac5;
+    --shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: var(--transition);
+}
+
+/* ===================================================
+   LOGIN PAGE
+   =================================================== */
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-card {
+    background: var(--card);
+    width: 360px;
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 25px var(--shadow);
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 14px;
+    margin: 14px 0;
+    background: var(--input-bg);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+}
+
+/* Fix red error text */
+.error-text {
+    color: red;
+    margin-top: 10px;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.toggle-pass {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: var(--text);
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* ===================================================
+   SIDEBAR
+   =================================================== */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 100vh;
+    background: var(--card);
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 5px 0 20px var(--shadow);
+    transition: 0.4s ease;
+    z-index: 100;
+}
+
+/* collapsed */
+.sidebar.collapsed {
+    width: 70px;
+}
+
+/* header */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.sidebar.collapsed .brand {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.toggle-btn {
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--accent2);
+}
+
+/* menu */
+.menu {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    text-align: left;
+    transition: 0.3s;
+}
+
+.menu-item:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+.menu-item.active {
+    background: var(--accent2);
+    color: #fff;
+}
+
+/* hide text in collapsed mode */
+.sidebar.collapsed .menu-item span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+/* Footer buttons */
+.sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mode-toggle {
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.btn-logout {
+    border: none;
+    padding: 12px;
+    border-radius: var(--radius);
+    background: crimson;
+    color: white;
+    font-weight: 600;
+}
+
+/* ===================================================
+   CONTENT AREA
+   =================================================== */
+#portfolio {
+    margin-left: 240px;
+    padding: 30px;
+    display: none;
+    transition: 0.4s;
+}
+
+.sidebar.collapsed ~ #portfolio {
+    margin-left: 70px;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.profile-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    padding: 6px;
+    background: conic-gradient(var(--accent), var(--accent2));
+    margin: auto;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* CARDS */
+.card {
+    max-width: 900px;
+    padding: 35px;
+    margin: 40px auto;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 6px 25px var(--shadow);
+}
+
+/* TITLES */
+.section-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+    border-left: 6px solid var(--accent);
+    padding-left: 12px;
+    font-weight: 700;
+}
+
+.sub-title {
+    font-size: 20px;
+    color: var(--accent);
+}
+
+/* SKILLS */
+.skill-box {
+    margin-bottom: 18px;
+}
+
+.skill-bar {
+    width: 100%;
+    background: var(--border);
+    height: 10px;
+    border-radius: 50px;
+    margin-top: 6px;
+}
+
+.skill-level {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 50px;
+    transition: 1.2s ease;
+}
+
+/* LIST */
+.custom-list {
+    margin-left: 25px;
+    line-height: 1.8;
+}
+
+/* PROJECTS */
+.project-grid {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.project-card {
+    background: var(--card);
+    padding: 18px;
+    border-radius: var(--radius);
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px var(--shadow);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 12px;
+}
+
+/* PROJECT DETAILS POPUP */
+.project-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 15, 15, 0.048);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 2000;
+}
+
+.project-modal-content {
+    background: #121213f1;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    color: white;
+}
+
+.modal-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    float: right;
+    cursor: pointer;
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #ff4d4d;
+}
+
+/* FADE IN */
+.fade-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.9s ease;
+}
+
+.fade-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Razielmae Andal | Portfolio</title>
+
+    <!-- ===================== GOOGLE FONTS ===================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- ===================== MAIN CSS ===================== -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         LOGIN SECTION
+    ========================================================== -->
+    <main id="login-section" class="centered-container">
+    <section class="login-card">
+
+        <h2>Login</h2>
+        <input 
+            type="text" 
+            id="username" 
+            class="input-field" 
+            placeholder="Enter username"
+            autocomplete="username"
+        >
+
+        <!-- PASSWORD FIELD WITH SHOW/HIDE -->
+
+        <div class="password-wrapper">
+            <input 
+                type="password" 
+                id="password" 
+                class="input-field" 
+                placeholder="Enter password"
+                autocomplete="current-password"
+            >
+            <button 
+                type="button" 
+                id="togglePass" 
+                class="toggle-pass"
+                aria-label="Show password"
+            >
+                Show
+            </button>
+        </div>
+
+        <!-- LOGIN BUTTON -->
+        <button class="btn btn-primary" onclick="login()">Login</button>
+
+        <!-- ERROR MESSAGE -->
+        <p id="error-msg" class="error-text"></p>
+    </section>
+</main>
+
+
+    <!-- =========================================================
+         SIDEBAR NAVIGATION
+    ========================================================== -->
+    <aside id="sidebar" class="sidebar">
+
+        <header class="sidebar-header">
+            <h2 class="brand">Razielmae S. Andal</h2>
+        </header>
+
+        <!-- Navigation Menu -->
+        <nav class="menu">
+            <button class="menu-item" onclick="switchPage('home')" id="link-home">
+                <span>🏠</span><span>Home</span>
+            </button>
+
+            <button class="menu-item" onclick="switchPage('about')" id="link-about">
+                <span>👩‍💻</span><span>About Me</span>
+            </button>
+
+            <button class="menu-item" onclick="switchPage('projects')" id="link-projects">
+                <span>📁</span><span>Projects</span>
+            </button>
+
+            <button class="menu-item" onclick="switchPage('contact')" id="link-contact">
+                <span>📩</span><span>Contact</span>
+            </button>
+        </nav>
+
+        <!-- Sidebar Footer -->
+        <footer class="sidebar-footer">
+            <span id="theme-icon" class="mode-toggle">🌙</span>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </footer>
+
+    </aside>
+
+    <!-- =========================================================
+         MAIN PORTFOLIO CONTENT
+    ========================================================== -->
+    <main id="portfolio">
+
+        <!-- ===================== HOME SECTION ===================== -->
+        <section id="home" class="hero page-section fade-section">
+            <div class="profile-container">
+                <img src="razielmae.jpg" class="profile-pic" alt="Profile Picture of Razielmae">
+            </div>
+
+            <h2>Hello, I'm <span class="accent">Razielmae Sarmiento Andal</span></h2>
+            <p>
+                A 24 year old 1st year Student 
+                taking Bachelor of Science in Information Technology (BSIT) 
+                at Caraga State University Cabadbaran Campus.I currently live in Magallanes, Agusan Del Norte, 
+                where I continue to grow both personally and academically.
+                This portfolio reflects my journey in the field of information technology, 
+                my learning experiences, the skills I am developing, and the projects that mark my progress. 
+                I am genuinely passionate about expanding my knowledge, improving my technical abilities, 
+                and creating work that I can be proud of.
+                
+                A creator at heart and A learner with big goals. 
+                This space is where I share my journey, my projects, and the things that inspire me. 
+                I hope my work reflects my passion, growth, and creativity. 
+                I hope you enjoy exploring my projects and get a glimpse of the dedication and effort I put into each one.
+                Enjoy exploring my world!
+            </p>
+         </section>        
+
+        <!-- ===================== ABOUT SECTION ===================== -->
+        <section id="about" class="card page-section fade-section">
+            <h2 class="section-title">About Me</h2>
+
+            <h3 class="sub-title">My Background</h3>
+            <p>“I started learning programming through C#, Java, Python,CSS, JavaScript  and HTML, and it became the foundation of my passion for coding.”</p>
+
+            <!-- Skill Levels -->
+            <h3 class="sub-title">Skills</h3>
+
+            <div class="skill-box">
+                <span>HTML</span>
+                <div class="skill-bar"><div class="skill-level" style="width: 78%;"></div></div>
+            </div>
+
+            <div class="skill-box">
+                <span>CSS</span>
+                <div class="skill-bar"><div class="skill-level" style="width: 78%;"></div></div>
+            </div>
+
+            <div class="skill-box">
+                <span>JavaScript</span>
+                <div class="skill-bar"><div class="skill-level" style="width: 78%;"></div></div>
+            </div>
+
+            <div class="skill-box">
+                <span>Java</span>
+                <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
+            </div>
+
+            <div class="skill-box">
+                <span>Python</span>
+                <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
+            </div>
+
+            <div class="skill-box">
+                <span>C#</span>
+                <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
+            </div>
+
+            <h3 class="sub-title">Interests</h3>
+            <ul class="custom-list">
+                <li>🎨 Aesthetic UI layouts</li>
+                <li>📱 Mobile-friendly design</li>
+                <li>💡 Learning new coding techniques</li>
+            </ul>
+        </section>
+
+        <!-- ===================== PROJECTS SECTION ===================== -->
+        <section id="projects" class="card page-section fade-section">
+            <h2 class="section-title">My Projects</h2>
+
+            <div class="project-grid">
+
+                <article class="project-card" onclick='openProject("csharp")'>
+                    <h3>Console Login Program</h3>
+                </article>
+
+                <article class="project-card" onclick='openProject("loginui")'>
+                    <h3>Login UI Website</h3>
+                </article>
+
+                <article class="project-card" onclick='openProject("python")'>
+                    <h3>Python Quiz Game</h3>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ===================== PROJECT MODAL POP-UP ===================== -->
+        <div id="project-modal" class="project-modal">
+            <div class="project-modal-content">
+                <span class="close-btn" onclick="closeProject()">✖</span>
+                <img id="modal-img" class="modal-img" alt="Project Image">
+                <h2 id="modal-title"></h2>
+                <p id="modal-desc"></p>
+            </div>
+        </div>
+
+        <!-- ===================== CONTACT SECTION ===================== -->
+        <section id="contact" class="card page-section fade-section">
+            <h2 class="section-title">My Contact</h2>
+
+            <ul class="custom-list">
+                <li>📧 Email: Razielmae.andal@csucc.edu.ph</li>
+                <li>📱 Phone: 0963-337-0568</li>
+                <li>🌐 Facebook: RazielMae Sarmiento Andal</li>
+                <li>📸 Instagram: andalraizel</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- ===================== MAIN SCRIPT ===================== -->
+    <script src="script.js"></script>
+
+</body>
+</html>
